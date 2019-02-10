@@ -1,0 +1,192 @@
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+button {
+  border: none;
+  background-color: none;
+  cursor: pointer;
+}
+
+.main-container {
+  display: flex;
+}
+
+.left-pane {
+  width: 70px;
+  height: 100vh;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.left-pane-header {
+  background-color: rgba(105, 113, 198, 1);
+  color: rgba(255, 255, 255, 1);
+  height: 40px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.left-pane-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 0.8rem;
+  margin-top: 30px;
+}
+
+.settings {
+  position: absolute;
+  bottom: 0;
+}
+
+.left-navigation-container {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.right-pane {
+  flex-grow: 1;
+  background-color: rgba(211, 211, 211, 0.15);
+}
+
+.right-pane-header {
+  height: 40px;
+  background-color: rgb(173, 216, 230);
+  color: rgba(255, 255, 255, 1);
+}
+
+.right-pane-body {
+  overflow: auto;
+  padding-top: 20px;
+  padding-left: 20px;
+  box-sizing: border-box;
+  height: calc(100vh - 40px);
+  width: calc(100vw - 70px);
+}
+
+.board-main-body {
+  display: flex;
+  margin: 10px 2px;
+}
+
+.board-main-header {
+  font-size: 1.3rem;
+}
+
+.list-header {
+  margin-bottom: 10px;
+}
+
+.list-body {
+  min-width: 150px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1), -1px -1px 3px rgba(0, 0, 0, 0.1);
+  min-height: 50px;
+  height: fit-content;
+  padding: 5px;
+  border-top: 2px solid;
+  box-sizing: border-box;
+  margin-right: 20px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.add-new-list {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  background: rgba(173, 216, 230, 1);
+  border-radius: 50%;
+  bottom: 10px;
+  right: 10px;
+  color: rgba(255, 255, 255, 1);
+  font-size: 2.5rem;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.add-list-button {
+  margin-top: -5px;
+}
+
+.list-footer {
+  text-align: center;
+  margin: 10px 0 0;
+}
+
+.task-container {
+  min-height: 20px;
+  padding: 10px 0;
+}
+
+.add-task-button {
+  margin: 0;
+  font-size: 0.75rem;
+  background-color: inherit;
+}
+
+.dialog {
+  border: none;
+  border-radius: 4px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.add-list-dialog {
+  top: 40%;
+  height: 150px;
+  width: 250px;
+}
+
+.dialog-form {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#color-picker {
+  width: 97%;
+}
+
+.dialog-submit-button {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.dialog-close-button {
+  position: absolute;
+  right: 15px;
+}
+
+.task-options {
+  text-align: end;
+}
+
+.task-body {
+  background-color: rgba(255, 255, 255, 1);
+  padding: 5px;
+  border-radius: 4px;
+  margin: 5px 0;
+  font-size: 0.9rem;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.add-task-dialog {
+  top: 30%;
+  height: 250px;
+  width: 400px;
+}
+
+.edit-task-dialog {
+  height: 200px;
+  width: 300px;
+}
+
+#edit-task {
+  cursor: pointer;
+}
+
+#delete-task {
+  cursor: pointer;
+}

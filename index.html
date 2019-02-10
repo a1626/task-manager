@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <div class="main-container">
+    <div class="left-pane">
+      <div class="left-pane-header">Hussle</div>
+      <div class="left-pane-body">
+        <div class="left-navigation-container">
+          <div>👥</div>
+          <div>Manage</div>
+        </div>
+        <div class="left-navigation-container">
+          <div>📅</div>
+          <div>Schedule</div>
+        </div>
+        <div class="left-navigation-container settings">
+          <div>⚙️</div>
+          <div>Settings</div>
+        </div>
+      </div>
+    </div>
+    <div class="right-pane">
+      <div class="right-pane-header"></div>
+      <div class="right-pane-body">
+        <div class="board-main-header">Dummy Board</div>
+        <div class="board-main-body">
+          <!-- List goes here -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="add-new-list" onclick="instance.openAddListDialog()">
+    <div class="add-list-button">&#43;</div>
+  </button>
+
+  <!-- dialogs starts -->
+  <dialog class="dialog add-list-dialog">
+    <button class="dialog-close-button" onclick="instance.closeAddListDialog()">&#10005;</button>
+    <div class="dialog-form">
+      <h3>Create new list</h3>
+      <input type="text" name="listTitle" placeholder="name" autofocus>
+      <input type="color" name="colorPicker" id="color-picker">
+      <button class="dialog-submit-button" onclick="instance.addNewList()">Create</button>
+    </div>
+  </dialog>
+
+  <dialog class="dialog add-task-dialog">
+    <button class="dialog-close-button" onclick="instance.closeAddTaskDialog()">&#10005;</button>
+    <div class="dialog-form">
+      <h3>Create new task</h3>
+      <input type="text" name="taskTitle" placeholder="name" autofocus>
+      <textarea name="taskDescription" placeholder="Description" cols="30" rows="10"></textarea>
+      <button class="dialog-submit-button" onclick="instance.addNewTask()">Create</button>
+    </div>
+  </dialog>
+
+  <dialog class="dialog edit-task-dialog">
+    <button class="dialog-close-button" onclick="instance.closeEditTaskDialog()">&#10005;</button>
+    <div class="dialog-form">
+      <h3>Edit Description</h3>
+      <textarea name="taskDescriptionEdit" placeholder="Description" cols="30" rows="10"></textarea>
+      <button class="dialog-submit-button" onclick="instance.changeDescription()">Change</button>
+    </div>
+  </dialog>
+  <!-- Dialogs ends -->
+
+  <!-- templates starts -->
+  <template id="new-list">
+    <div class="list-body">
+      <div class="list-header">Dummy List</div>
+      <div class="task-container" ondrop="instance.handleDrop(event)" ondragover="instance.handleDragOver(event)">
+        <!-- Tasks goes here -->
+      </div>
+      <footer class="list-footer">
+        <button class="add-task-button" onclick="instance.openAddTaskDialog(event)">Add Task &#8853;</button>
+      </footer>
+    </div>
+  </template>
+
+  <template id="new-task">
+    <div class="task-body" draggable="true" ondragstart="instance.handleDragStart(event)">
+      <div class="task-options">
+        <span id="edit-task">&#9998;</span>
+        <span id="delete-task">&#10008;</span>
+      </div>
+      <div class="task-title">Dummy Task</div>
+      <div class="task-description" hidden>Dummy description</div>
+    </div>
+  </template>
+  <!-- templates ends -->
+
+  <script src="./index.js"></script>
+</body>
+
+</html>
